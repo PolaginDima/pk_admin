@@ -1,0 +1,60 @@
+object frmInstPO: TfrmInstPO
+  Left = 290
+  Height = 410
+  Top = 180
+  Width = 920
+  Caption = 'Установка/Удаление ПО'
+  ClientHeight = 410
+  ClientWidth = 920
+  KeyPreview = True
+  OnResize = FormResize
+  LCLVersion = '1.8.4.0'
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 338
+    Top = 0
+    Width = 920
+    Align = alTop
+    Color = clWindow
+    Columns = <    
+      item
+        ButtonStyle = cbsCheckboxColumn
+        Title.Caption = 'выбор'
+        FieldName = 'SEL'
+      end    
+      item
+        Title.Caption = 'ID'
+        Visible = False
+        FieldName = 'ID'
+      end    
+      item
+        Title.Caption = 'сист. блок'
+        Width = 700
+        FieldName = 'SN'
+      end    
+      item
+        Title.Caption = 'PR'
+        FieldName = 'PR'
+      end>
+    DataSource = DataSource1
+    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgRowHighlight]
+    TabOrder = 0
+    OnDrawColumnCell = DBGrid1DrawColumnCell
+  end
+  object Button1: TButton
+    Left = 376
+    Height = 51
+    Top = 344
+    Width = 142
+    Anchors = [akLeft, akRight, akBottom]
+    Caption = 'OK'
+    Default = True
+    ModalResult = 1
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object DataSource1: TDataSource
+    left = 64
+    top = 10
+  end
+end

@@ -1,0 +1,523 @@
+object editInstPO: TeditInstPO
+  Left = 419
+  Height = 330
+  Top = 216
+  Width = 476
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Установка/Удаление ПО'
+  ClientHeight = 330
+  ClientWidth = 476
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  LCLVersion = '1.8.2.0'
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 272
+    Top = 0
+    Width = 476
+    ActivePage = TabSheet1
+    Align = alTop
+    TabIndex = 0
+    TabOrder = 0
+    object TabSheet1: TTabSheet
+      Caption = 'реквизиты'
+      ClientHeight = 246
+      ClientWidth = 468
+      object DBMemo1: TDBMemo
+        Left = 144
+        Height = 56
+        Top = 176
+        Width = 294
+        DataField = 'DOP'
+        DataSource = DataSource1
+        ScrollBars = ssAutoVertical
+        TabOrder = 6
+      end
+      object Label5: TLabel
+        Left = 8
+        Height = 26
+        Top = 176
+        Width = 85
+        Caption = 'дополнительная'#10'информация'
+        ParentColor = False
+      end
+      object Label7: TLabel
+        Left = 8
+        Height = 13
+        Top = 104
+        Width = 25
+        Caption = 'дата'
+        ParentColor = False
+      end
+      object DBDateTimePicker1: TDBDateTimePicker
+        Left = 144
+        Height = 21
+        Top = 104
+        Width = 81
+        DataField = 'DT'
+        DataSource = DataSource1
+        ReadOnly = False
+        CenturyFrom = 1941
+        MaxDate = 2958465
+        MinDate = -53780
+        TabOrder = 5
+        TrailingSeparator = False
+        TextForNullDate = 'NULL'
+        LeadingZeros = True
+        Kind = dtkDate
+        TimeFormat = tf24
+        TimeDisplay = tdHMS
+        DateMode = dmComboBox
+        UseDefaultSeparators = True
+        HideDateTimeParts = []
+        MonthNames = 'Long'
+      end
+      object Label3: TLabel
+        Left = 8
+        Height = 13
+        Top = 70
+        Width = 48
+        Caption = 'действие'
+        ParentColor = False
+      end
+      object DBLookupComboBox3: TDBLookupComboBox
+        Left = 144
+        Height = 21
+        Top = 70
+        Width = 231
+        AutoComplete = True
+        AutoDropDown = True
+        DataField = 'ID_INSTALL_ACTION'
+        DataSource = DataSource1
+        KeyField = 'ID'
+        ListField = 'NAME'
+        ListFieldIndex = 0
+        ListSource = DataSource4
+        LookupCache = False
+        NullValueKey = 32
+        ScrollListDataset = True
+        Style = csDropDownList
+        TabOrder = 3
+      end
+      object Label2: TLabel
+        Left = 8
+        Height = 13
+        Top = 39
+        Width = 56
+        Caption = 'что ставил'
+        ParentColor = False
+      end
+      object DBLookupComboBox2: TDBLookupComboBox
+        Left = 144
+        Height = 21
+        Top = 39
+        Width = 231
+        AutoComplete = True
+        AutoDropDown = True
+        DataField = 'ID_PO'
+        DataSource = DataSource1
+        KeyField = 'ID'
+        ListField = 'NAME'
+        ListFieldIndex = 0
+        ListSource = DataSource3
+        LookupCache = False
+        ScrollListDataset = True
+        Style = csDropDownList
+        TabOrder = 1
+      end
+      object Label1: TLabel
+        Left = 8
+        Height = 13
+        Top = 8
+        Width = 56
+        Caption = 'кто ставил'
+        ParentColor = False
+      end
+      object DBLookupComboBox1: TDBLookupComboBox
+        Left = 144
+        Height = 21
+        Top = 8
+        Width = 231
+        AutoComplete = True
+        AutoDropDown = True
+        DataField = 'ID_START_WORK'
+        DataSource = DataSource1
+        KeyField = 'ID'
+        ListField = 'FAM'
+        ListFieldIndex = 0
+        ListSource = DataSource2
+        LookupCache = False
+        OnChange = DBLookupComboBox1Change
+        ScrollListDataset = True
+        Style = csDropDownList
+        TabOrder = 0
+      end
+      object Button2: TButton
+        Left = 376
+        Height = 21
+        Top = 39
+        Width = 24
+        Caption = '...'
+        OnClick = Button2Click
+        TabOrder = 2
+      end
+      object Button3: TButton
+        Left = 376
+        Height = 21
+        Top = 70
+        Width = 24
+        Caption = '...'
+        OnClick = Button3Click
+        TabOrder = 4
+      end
+      object Label9: TLabel
+        Left = 136
+        Height = 13
+        Top = 8
+        Width = 6
+        Caption = '*'
+        Font.Color = clRed
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label10: TLabel
+        Left = 136
+        Height = 13
+        Top = 39
+        Width = 6
+        Caption = '*'
+        Font.Color = clRed
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label14: TLabel
+        Left = 136
+        Height = 13
+        Top = 104
+        Width = 6
+        Caption = '*'
+        Font.Color = clRed
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label6: TLabel
+        Left = 8
+        Height = 26
+        Top = 136
+        Width = 88
+        Caption = 'на какие машины'#13#10'ставил'
+        ParentColor = False
+      end
+      object Label8: TLabel
+        Left = 144
+        Height = 13
+        Top = 140
+        Width = 29
+        Caption = 'пусто'
+        ParentColor = False
+      end
+      object Button6: TButton
+        Left = 208
+        Height = 21
+        Top = 136
+        Width = 24
+        Caption = '...'
+        OnClick = Button6Click
+        TabOrder = 7
+      end
+      object Label15: TLabel
+        Left = 136
+        Height = 13
+        Top = 70
+        Width = 6
+        Caption = '*'
+        Font.Color = clRed
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label16: TLabel
+        Left = 200
+        Height = 13
+        Top = 136
+        Width = 6
+        Caption = '*'
+        Font.Color = clRed
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+  end
+  object Button5: TButton
+    Left = 48
+    Height = 36
+    Top = 280
+    Width = 139
+    Caption = 'сохранить и выйти'
+    Default = True
+    ModalResult = 1
+    OnClick = Button5Click
+    TabOrder = 1
+  end
+  object Button8: TButton
+    Left = 288
+    Height = 36
+    Top = 280
+    Width = 139
+    Cancel = True
+    Caption = 'отменить и выйти'
+    ModalResult = 2
+    OnClick = Button8Click
+    TabOrder = 2
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'DTR'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'DOP'
+        DataType = ftString
+        Precision = -1
+        Size = 1020
+      end    
+      item
+        Name = 'DT'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'ID_USER'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ID_SB'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ID_START_WORK'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ID_PO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ID_INSTALL_ACTION'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ID_RAION'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    SQL.Strings = (
+      'select * from install_po'
+    )
+    Params = <>
+    left = 216
+    object SQLQuery1ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery1DOP: TStringField
+      FieldKind = fkData
+      FieldName = 'DOP'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1020
+    end
+    object SQLQuery1DT: TDateField
+      FieldKind = fkData
+      FieldName = 'DT'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery1ID_USER: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_USER'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery1ID_SB: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_SB'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery1ID_START_WORK: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_START_WORK'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery1ID_PO: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_PO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery1ID_INSTALL_ACTION: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_INSTALL_ACTION'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery1ID_RAION: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_RAION'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    left = 272
+  end
+  object SQLQuery2: TSQLQuery
+    FieldDefs = <>
+    ReadOnly = True
+    SQL.Strings = (
+      'select * from START_WORK join PEOPLES'
+      'ON (START_WORK.ID_PEOPLE=PEOPLES.ID)'
+      'WHERE (START_WORK.ID_RAION=:ID_RAION)and'
+      '('
+      'not exists'
+      '(select ID from DISCHARGE where DISCHARGE.ID_START_WORK=START_WORK.ID)'
+      ')'
+      'order by FAM, NAM, OTCH'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'id_raion'
+        ParamType = ptInput
+      end>
+    left = 272
+    top = 32
+  end
+  object DataSource2: TDataSource
+    DataSet = SQLQuery2
+    left = 301
+    top = 32
+  end
+  object SQLQuery3: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 1020
+      end    
+      item
+        Name = 'ID_RAION'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ID_USER'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    ReadOnly = True
+    SQL.Strings = (
+      'select * from po  /*'
+      'where (id_raion=:id_raion)     */'
+      'order by name'
+    )
+    Params = <>
+    left = 264
+    top = 64
+  end
+  object DataSource3: TDataSource
+    DataSet = SQLQuery3
+    left = 293
+    top = 64
+  end
+  object SQLQuery4: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 1020
+      end    
+      item
+        Name = 'ID_RAION'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ID_USER'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    ReadOnly = True
+    SQL.Strings = (
+      'select * from install_action  /*'
+      'where (id_raion=:id_raion)  */'
+      'order by name'
+    )
+    Params = <>
+    left = 200
+    top = 88
+  end
+  object DataSource4: TDataSource
+    DataSet = SQLQuery4
+    left = 229
+    top = 88
+  end
+end

@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="10"/>
+    <PathDelim Value="\"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <Title Value="ptk_admin v1.0"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <Icon Value="0"/>
+    </General>
+    <i18n>
+      <EnableI18N LFM="False"/>
+    </i18n>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <MajorVersionNr Value="1"/>
+      <Language Value="0419"/>
+      <CharSet Value="04E3"/>
+      <StringTable CompanyName="Polagin D.A." ProductVersion="1.0"/>
+    </VersionInfo>
+    <BuildModes Count="1">
+      <Item1 Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="6">
+      <Item1>
+        <PackageName Value="MaskEditFromPolagin"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="laz_fpspreadsheet_visual"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="DateTimeCtrls"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="SQLDBLaz"/>
+      </Item4>
+      <Item5>
+        <PackageName Value="FCL"/>
+      </Item5>
+      <Item6>
+        <PackageName Value="LCL"/>
+      </Item6>
+    </RequiredPackages>
+    <Units Count="39">
+      <Unit0>
+        <Filename Value="ptk_admin.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="main.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="mainF"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="workbd.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="workBD"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="zastavka.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="zastavka1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="tdbslovaritemplateform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DBTemplateForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="TDBSlovariTemplateForm"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="tdbeditslovari.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DBEditSlovar"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="mydbgrid.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="myDBGrid"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="forslovari.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="auth.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmauth"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="addemploy.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="editEmploy"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="addEmploy"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="moveemployee.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="moveEmpl"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="moveEmployee"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="uvolnenieemployee.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="uvolnEmpl"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uvolnenieEmployee"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="my_tabsheet.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="tmpstopSW.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="tmpstopSTARTWORK"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="addmni.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="editMNI"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="spisaniemni.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="spisMni"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="createdoc.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="createDOC"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="workinooandms.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="addsertifikat.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="editSert"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="addkripto.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="editKRIPTO"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="deletekripto.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="delKripto"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="addsb2.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="editSB2"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="raions.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormRaion"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="RAIONS"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="selectdoc.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="viborDoc"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="selectDOC"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="addraznoe.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="editRAZNOE"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="spisaniesb.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="spisSB"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="add_rashodnik.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmRashodnik"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Add_rashodnik"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="del_rashodnik.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmRashodnikdel"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Del_rashodnik"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="edit_rash_for.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmRashFor"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Edit_Rash_For"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="spisanieraznoe.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="spisRaznoe"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="spisaniesert.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="spisSert"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="tmpstopSERT.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="tmpstopSERT"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="addlicense.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="editLicense"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="addLicense"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="findrecord.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmfindrecord"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="infokartridj.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frminfokartridj"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="MyMaskEdit\maskeditfrompolagin.lpk"/>
+        <IsPartOfProject Value="True"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="instpo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmInstPO"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="InstPO"/>
+      </Unit36>
+      <Unit37>
+        <Filename Value="addinstpo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="editInstPO"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="addInstPO"/>
+      </Unit37>
+      <Unit38>
+        <Filename Value="add_dostup.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmDostup"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit38>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="ptk_admin"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <CodeGeneration>
+      <SmartLinkUnit Value="True"/>
+    </CodeGeneration>
+    <Linking>
+      <Debugging>
+        <UseLineInfoUnit Value="False"/>
+        <StripSymbols Value="True"/>
+        <UseExternalDbgSyms Value="True"/>
+      </Debugging>
+      <LinkSmart Value="True"/>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

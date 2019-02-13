@@ -1,0 +1,151 @@
+object frmfindrecord: Tfrmfindrecord
+  Left = 322
+  Height = 236
+  Top = 284
+  Width = 807
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'поиск'
+  ClientHeight = 236
+  ClientWidth = 807
+  LCLVersion = '1.8.2.0'
+  object Label1: TLabel
+    Left = 17
+    Height = 13
+    Top = 17
+    Width = 44
+    Caption = 'поиск по'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 17
+    Height = 13
+    Top = 40
+    Width = 41
+    Caption = 'условие'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 144
+    Height = 13
+    Top = 24
+    Width = 12
+    Caption = 'от'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 272
+    Height = 13
+    Top = 24
+    Width = 13
+    Caption = 'до'
+    ParentColor = False
+    Visible = False
+  end
+  object CheckBox1: TCheckBox
+    Left = 17
+    Height = 17
+    Top = 144
+    Width = 112
+    Caption = 'название целиком'
+    TabOrder = 2
+  end
+  object ComboBox1: TComboBox
+    Left = 88
+    Height = 21
+    Top = 40
+    Width = 120
+    ItemHeight = 13
+    ItemIndex = 0
+    Items.Strings = (
+      'содержит'
+      'начинается с'
+      '='
+      '<>'
+      'диапазон чисел'
+      'диапазон дат'
+      '>'
+      '<'
+      '>='
+      '<='
+      'оканчивается'
+    )
+    Style = csDropDownList
+    TabOrder = 3
+    Text = 'содержит'
+  end
+  object editWhat: TEdit
+    Left = 216
+    Height = 21
+    Top = 40
+    Width = 576
+    TabOrder = 0
+  end
+  object dtpIn1: TDateTimePicker
+    Left = 312
+    Height = 21
+    Top = 24
+    Width = 81
+    CenturyFrom = 1941
+    MaxDate = 2958465
+    MinDate = -53780
+    TabOrder = 4
+    TrailingSeparator = False
+    TextForNullDate = 'NULL'
+    LeadingZeros = True
+    Visible = False
+    Kind = dtkDate
+    TimeFormat = tf24
+    TimeDisplay = tdHMS
+    DateMode = dmComboBox
+    Date = 42831
+    Time = 0.71057267361175
+    UseDefaultSeparators = True
+    HideDateTimeParts = []
+    MonthNames = 'Long'
+  end
+  object dtpFrom1: TDateTimePicker
+    Left = 160
+    Height = 21
+    Top = 24
+    Width = 81
+    CenturyFrom = 1941
+    MaxDate = 2958465
+    MinDate = -53780
+    TabOrder = 5
+    TrailingSeparator = False
+    TextForNullDate = 'NULL'
+    LeadingZeros = True
+    Visible = False
+    Kind = dtkDate
+    TimeFormat = tf24
+    TimeDisplay = tdHMS
+    DateMode = dmComboBox
+    Date = 42831
+    Time = 0.710745659722306
+    UseDefaultSeparators = True
+    HideDateTimeParts = []
+    MonthNames = 'Long'
+  end
+  object btnFind: TButton
+    Left = 22
+    Height = 32
+    Top = 192
+    Width = 101
+    Caption = 'Найти'
+    Default = True
+    ModalResult = 1
+    OnClick = btnFindClick
+    TabOrder = 1
+  end
+  object btnCancel: TButton
+    Left = 272
+    Height = 32
+    Top = 192
+    Width = 101
+    Cancel = True
+    Caption = 'Отмена'
+    ModalResult = 2
+    TabOrder = 6
+  end
+end

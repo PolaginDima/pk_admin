@@ -1,0 +1,34 @@
+object zastavka1: Tzastavka1
+  Left = 455
+  Height = 199
+  Top = 312
+  Width = 434
+  BorderIcons = []
+  BorderStyle = bsDialog
+  ClientHeight = 199
+  ClientWidth = 434
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  LCLVersion = '1.4.0.4'
+  object Label1: TLabel
+    Left = 64
+    Height = 25
+    Top = 80
+    Width = 211
+    Caption = 'Ожидайте идет загрузка'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -21
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Timer1: TTimer
+    Enabled = False
+    OnTimer = Timer1Timer
+    left = 190
+    top = 27
+  end
+end

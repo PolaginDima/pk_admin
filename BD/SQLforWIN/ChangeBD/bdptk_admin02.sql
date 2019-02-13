@@ -1,0 +1,40 @@
+/*скрипт для создания базы данных*/
+/*Здесь создаются таблицы, ограничения unique, изменения таблиц ALTER TABLE*/
+/*Добавляются первичные ключи PRIMARY KEY*/
+
+/*SET AUTODDL ON/OFF - авто подтверждение операторов*/
+/*commit; - после каждой команды которая должна*/
+/*выполниться, подтверждение операторов*/
+/*последний commit; можно отменить с помощью rollback*/
+
+/*COMMIT;*/
+
+/*ALTER TABLE COPY_KRIPTO
+ADD ID_LOCATION INTEGER NOT NULL;
+COMMIT;*/
+
+/*------------------------------------*/
+/*ЖУРНАЛ регистрации SB*/
+/*создаем таблицу регистрации МНИ с первичным ключем ID*/
+/*ALTER TABLE SB
+ADD CPU_MHZ INTEGER DEFAULT 2000,
+ADD COUNT_IADRA INTEGER DEFAULT 1,
+ADD ID_TIP_PROC INTEGER,
+ADD ID_TIP_MEMORY INTEGER,
+ADD SIZE_MEMORY_MB INTEGER DEFAULT 2000,
+ADD ID_NAME_SB INTEGER NOT NULL,
+ADD ID_START_WORK INTEGER NOT NULL,
+ADD ID_PR_RASPR SMALLINT NOT NULL,
+ADD ID_NAME_OS SMALLINT,
+ADD ID_LICENSE_OS SMALLINT,
+ADD ID_WORK_SB SMALLINT,
+ADD OTKUDA VARCHAR(100) CHARACTER SET WIN1251 NOT NULL COLLATE PXW_CYRL,
+ADD DTI DATE NOT NULL,
+ADD SERIAL  VARCHAR(50) CHARACTER SET WIN1251 NOT NULL COLLATE PXW_CYRL,
+ADD INVENT  VARCHAR(30) CHARACTER SET WIN1251 NOT NULL COLLATE PXW_CYRL,
+DROP CONSTRAINT UNIQUE_SB_UCHETN,
+ADD CONSTRAINT UNIQUE_SB UNIQUE(ID_NAME_SB, SERIAL),
+ADD CONSTRAINT CORR_SB_DT_DTI CHECK(DT>=DTI);
+COMMIT;*/
+
+

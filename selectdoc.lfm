@@ -1,0 +1,107 @@
+object viborDoc: TviborDoc
+  Left = 419
+  Height = 195
+  Top = 278
+  Width = 377
+  Caption = 'viborDoc'
+  ClientHeight = 195
+  ClientWidth = 377
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  LCLVersion = '1.8.4.0'
+  object ComboBox1: TComboBox
+    Left = 25
+    Height = 21
+    Top = 23
+    Width = 335
+    DropDownCount = 20
+    ItemHeight = 13
+    Items.Strings = (
+      'Акт уничтоженных МНИ'
+    )
+    OnChange = ComboBox1Change
+    Style = csDropDownList
+    TabOrder = 0
+  end
+  object DateTimePicker1: TDateTimePicker
+    Left = 104
+    Height = 21
+    Top = 56
+    Width = 81
+    CenturyFrom = 1941
+    MaxDate = 2958465
+    MinDate = -53780
+    TabOrder = 1
+    TrailingSeparator = False
+    TextForNullDate = 'NULL'
+    LeadingZeros = True
+    Kind = dtkDate
+    TimeFormat = tf24
+    TimeDisplay = tdHMS
+    DateMode = dmComboBox
+    Date = 42401
+    Time = 0.514935104169126
+    UseDefaultSeparators = True
+    HideDateTimeParts = []
+    MonthNames = 'Long'
+  end
+  object DateTimePicker2: TDateTimePicker
+    Left = 104
+    Height = 21
+    Top = 84
+    Width = 81
+    CenturyFrom = 1941
+    MaxDate = 2958465
+    MinDate = -53780
+    TabOrder = 2
+    TrailingSeparator = False
+    TextForNullDate = 'NULL'
+    LeadingZeros = True
+    Kind = dtkDate
+    TimeFormat = tf24
+    TimeDisplay = tdHMS
+    DateMode = dmComboBox
+    Date = 42401
+    Time = 0.514935104169126
+    UseDefaultSeparators = True
+    HideDateTimeParts = []
+    MonthNames = 'Long'
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 13
+    Top = 56
+    Width = 5
+    Caption = 'c'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 8
+    Height = 13
+    Top = 84
+    Width = 12
+    Caption = 'по'
+    ParentColor = False
+  end
+  object Button1: TButton
+    Left = 52
+    Height = 35
+    Top = 120
+    Width = 118
+    Caption = 'OK'
+    Default = True
+    ModalResult = 1
+    OnClick = Button1Click
+    TabOrder = 3
+  end
+  object Button2: TButton
+    Left = 232
+    Height = 35
+    Top = 122
+    Width = 118
+    Cancel = True
+    Caption = 'ОТМЕНИТЬ'
+    ModalResult = 2
+    TabOrder = 4
+  end
+end

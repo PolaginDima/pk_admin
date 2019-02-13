@@ -1,0 +1,107 @@
+object frminfokartridj: Tfrminfokartridj
+  Left = 326
+  Height = 255
+  Top = 313
+  Width = 530
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'информация по картриджу'
+  ClientHeight = 255
+  ClientWidth = 530
+  Position = poDesktopCenter
+  LCLVersion = '1.6.4.0'
+  object Label1: TLabel
+    Left = 23
+    Height = 15
+    Top = 16
+    Width = 143
+    Caption = 'наименование картриджа'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 24
+    Height = 15
+    Top = 48
+    Width = 97
+    Caption = 'дата поступления'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 24
+    Height = 15
+    Top = 80
+    Width = 91
+    Caption = 'откуда поступил'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 24
+    Height = 15
+    Top = 152
+    Width = 62
+    Caption = 'кто принял'
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 25
+    Height = 15
+    Top = 184
+    Width = 64
+    Caption = 'количество'
+    ParentColor = False
+  end
+  object Memo1: TMemo
+    Left = 184
+    Height = 64
+    Top = 80
+    Width = 330
+    OnKeyPress = Edit1KeyPress
+    ReadOnly = True
+    ScrollBars = ssVertical
+    TabOrder = 2
+  end
+  object Edit1: TEdit
+    Left = 184
+    Height = 23
+    Top = 16
+    Width = 329
+    OnKeyPress = Edit1KeyPress
+    ReadOnly = True
+    TabOrder = 0
+  end
+  object Edit2: TEdit
+    Left = 184
+    Height = 23
+    Top = 48
+    Width = 329
+    ReadOnly = True
+    TabOrder = 1
+  end
+  object Edit3: TEdit
+    Left = 184
+    Height = 23
+    Top = 152
+    Width = 329
+    ReadOnly = True
+    TabOrder = 3
+  end
+  object Edit4: TEdit
+    Left = 184
+    Height = 23
+    Top = 184
+    Width = 329
+    ReadOnly = True
+    TabOrder = 4
+  end
+  object BitBtn1: TBitBtn
+    Left = 230
+    Height = 32
+    Top = 216
+    Width = 71
+    Cancel = True
+    Caption = 'ОК'
+    Default = True
+    ModalResult = 1
+    TabOrder = 5
+  end
+end

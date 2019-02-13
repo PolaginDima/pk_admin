@@ -1,0 +1,625 @@
+object frmRashodnikdel: TfrmRashodnikdel
+  Left = 340
+  Height = 339
+  Top = 233
+  Width = 656
+  Caption = 'Расход РАСХОДНИКИ'
+  ClientHeight = 339
+  ClientWidth = 656
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  LCLVersion = '1.8.2.0'
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 96
+    Height = 21
+    Top = 12
+    Width = 520
+    AutoComplete = True
+    AutoDropDown = True
+    DataField = 'NAME'
+    DataSource = DataSource2
+    KeyField = 'NAME'
+    ListField = 'NAME'
+    ListFieldIndex = 0
+    ListSource = DataSource2
+    LookupCache = False
+    OnChange = DBLookupComboBox1Change
+    ScrollListDataset = True
+    Sorted = True
+    Style = csDropDownList
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 13
+    Top = 12
+    Width = 18
+    Caption = 'тип'
+    ParentColor = False
+  end
+  object DBDateTimePicker1: TDBDateTimePicker
+    Left = 96
+    Height = 21
+    Top = 235
+    Width = 81
+    DataField = 'DT'
+    DataSource = DataSource1
+    ReadOnly = False
+    CenturyFrom = 1941
+    MaxDate = 2958465
+    MinDate = -53780
+    TabOrder = 1
+    TrailingSeparator = False
+    TextForNullDate = 'NULL'
+    LeadingZeros = True
+    Kind = dtkDate
+    TimeFormat = tf24
+    TimeDisplay = tdHMS
+    DateMode = dmComboBox
+    UseDefaultSeparators = True
+    HideDateTimeParts = []
+    MonthNames = 'Long'
+  end
+  object Label2: TLabel
+    Left = 8
+    Height = 13
+    Top = 235
+    Width = 25
+    Caption = 'дата'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 8
+    Height = 26
+    Top = 48
+    Width = 72
+    Caption = 'наименование'#13#10'расходника'
+    ParentColor = False
+  end
+  object DBLookupComboBox2: TDBLookupComboBox
+    Left = 96
+    Height = 21
+    Top = 48
+    Width = 520
+    AutoComplete = True
+    AutoDropDown = True
+    DataField = 'ID_NAME'
+    DataSource = DataSource1
+    KeyField = 'ID'
+    ListField = 'NAME'
+    ListFieldIndex = 0
+    ListSource = DataSource3
+    LookupCache = False
+    ScrollListDataset = True
+    Sorted = True
+    Style = csDropDownList
+    TabOrder = 2
+  end
+  object Label4: TLabel
+    Left = 8
+    Height = 26
+    Top = 88
+    Width = 71
+    Caption = 'кто'#13#10'израсходовал'
+    ParentColor = False
+  end
+  object DBLookupComboBox3: TDBLookupComboBox
+    Left = 96
+    Height = 21
+    Top = 88
+    Width = 522
+    AutoComplete = True
+    AutoDropDown = True
+    DataField = 'ID_START_WORK'
+    DataSource = DataSource1
+    KeyField = 'ID'
+    ListField = 'FIO'
+    ListFieldIndex = 0
+    ListSource = DataSource4
+    LookupCache = False
+    ScrollListDataset = True
+    Sorted = True
+    Style = csDropDownList
+    TabOrder = 3
+  end
+  object Label5: TLabel
+    Left = 8
+    Height = 26
+    Top = 122
+    Width = 54
+    Caption = 'к чему'#13#10'расходник'
+    ParentColor = False
+  end
+  object Label6: TLabel
+    Left = 8
+    Height = 13
+    Top = 200
+    Width = 59
+    Caption = 'количество'
+    ParentColor = False
+  end
+  object DBEdit1: TDBEdit
+    Left = 96
+    Height = 21
+    Top = 200
+    Width = 64
+    DataField = 'COUNT_R'
+    DataSource = DataSource1
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 8
+  end
+  object UpDown1: TUpDown
+    Left = 160
+    Height = 21
+    Top = 200
+    Width = 17
+    Associate = DBEdit1
+    Max = 500
+    Min = 1
+    OnClick = UpDown1Click
+    Position = 1
+    TabOrder = 9
+    Wrap = False
+  end
+  object Button1: TButton
+    Left = 54
+    Height = 29
+    Top = 296
+    Width = 175
+    Caption = 'ПРИНЯТЬ'
+    Default = True
+    ModalResult = 1
+    OnClick = Button1Click
+    TabOrder = 10
+  end
+  object Button2: TButton
+    Left = 344
+    Height = 29
+    Top = 296
+    Width = 175
+    Cancel = True
+    Caption = 'ОТМЕНА'
+    ModalResult = 2
+    TabOrder = 11
+  end
+  object Button3: TButton
+    Left = 624
+    Height = 21
+    Top = 48
+    Width = 24
+    Caption = '...'
+    OnClick = Button3Click
+    TabOrder = 7
+    TabStop = False
+  end
+  object Button4: TButton
+    Left = 624
+    Height = 21
+    Top = 12
+    Width = 24
+    Caption = '...'
+    OnClick = Button4Click
+    TabOrder = 4
+    TabStop = False
+  end
+  object DBLookupComboBox4: TDBLookupComboBox
+    Left = 96
+    Height = 21
+    Top = 122
+    Width = 520
+    AutoComplete = True
+    AutoDropDown = True
+    DataField = 'ID_RASHODNIK_FOR'
+    DataSource = DataSource1
+    KeyField = 'ID'
+    ListField = 'name'
+    ListFieldIndex = 0
+    ListSource = DataSource5
+    LookupCache = False
+    ScrollListDataset = True
+    Sorted = True
+    Style = csDropDownList
+    TabOrder = 12
+  end
+  object Button5: TButton
+    Left = 624
+    Height = 21
+    Top = 122
+    Width = 24
+    Caption = '...'
+    OnClick = Button5Click
+    TabOrder = 5
+    TabStop = False
+  end
+  object Button6: TButton
+    Left = 624
+    Height = 21
+    Top = 88
+    Width = 24
+    Caption = '...'
+    OnClick = Button6Click
+    TabOrder = 6
+    TabStop = False
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'DTR'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'DT'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'ID_START_WORK'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ID_NAME'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'COUNT_R'
+        DataType = ftSmallint
+        Precision = -1
+      end    
+      item
+        Name = 'ID_RASHODNIK_FOR'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    SQL.Strings = (
+      'select * from rashodnik_del'
+    )
+    Params = <>
+    left = 280
+    top = 200
+    object SQLQuery1ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery1DTR: TDateTimeField
+      FieldKind = fkData
+      FieldName = 'DTR'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery1DT: TDateField
+      FieldKind = fkData
+      FieldName = 'DT'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery1ID_START_WORK: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_START_WORK'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery1ID_NAME: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_NAME'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery1COUNT_R: TSmallintField
+      FieldKind = fkData
+      FieldName = 'COUNT_R'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery1ID_RASHODNIK_FOR: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_RASHODNIK_FOR'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery1ID_RAION: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_RAION'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Visible = False
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    OnDataChange = DataSource1DataChange
+    left = 309
+    top = 200
+  end
+  object SQLQuery2: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 1020
+      end>
+    SQL.Strings = (
+      'select * from rashodnik_tip'
+      'order by name'
+    )
+    Params = <>
+    left = 280
+    top = 232
+    object SQLQuery2ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery2NAME: TStringField
+      FieldKind = fkData
+      FieldName = 'NAME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 1020
+    end
+  end
+  object DataSource2: TDataSource
+    DataSet = SQLQuery2
+    left = 309
+    top = 232
+  end
+  object SQLQuery3: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ID_TIP'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 1020
+      end>
+    AfterScroll = SQLQuery3AfterScroll
+    SQL.Strings = (
+      'select * from rashodnik_name'
+      'where (rashodnik_name.id_tip=:id_tip)'
+      'order by name'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'id_tip'
+        ParamType = ptInput
+      end>
+    left = 472
+    top = 192
+    object SQLQuery3ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery3ID_TIP: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_TIP'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery3NAME: TStringField
+      FieldKind = fkData
+      FieldName = 'NAME'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 1020
+    end
+  end
+  object DataSource3: TDataSource
+    DataSet = SQLQuery3
+    left = 501
+    top = 192
+  end
+  object SQLQuery4: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'TABNOM'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'FIO'
+        DataType = ftString
+        Precision = -1
+        Size = 2088
+      end    
+      item
+        Name = 'GNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 1020
+      end    
+      item
+        Name = 'PNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 1020
+      end>
+    AfterScroll = SQLQuery4AfterScroll
+    SQL.Strings = (
+      'select ID, TABNOM, FIO||'' таб.№''||TABNOM||'' ''||PNAME as FIO,'
+      '  GNAME, PNAME from VIEW_GET_SW'
+      '  where ID_RAION=:ID_RAION'
+      'order by FIO'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID_RAION'
+        ParamType = ptInput
+      end>
+    left = 472
+    top = 240
+    object SQLQuery4ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery4TABNOM: TStringField
+      FieldKind = fkData
+      FieldName = 'TABNOM'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery4FIO: TStringField
+      FieldKind = fkData
+      FieldName = 'FIO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2088
+    end
+    object SQLQuery4GNAME: TStringField
+      FieldKind = fkData
+      FieldName = 'GNAME'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1020
+    end
+    object SQLQuery4PNAME: TStringField
+      FieldKind = fkData
+      FieldName = 'PNAME'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1020
+    end
+  end
+  object DataSource4: TDataSource
+    DataSet = SQLQuery4
+    left = 501
+    top = 240
+  end
+  object SQLQuery5: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 3068
+      end>
+    SQL.Strings = (
+      'select Rashodnik_for.id,'
+      'raznoe_tip.name||'' '' || raznoe_model.name as name from rashodnik_for join raznoe_model'
+      'on (rashodnik_for.id_raznoe_model=raznoe_model.id) join raznoe_tip'
+      'on (rashodnik_for.id_raznoe_tip=raznoe_tip.id)  join raznoe'
+      'on ((raznoe.id_model=raznoe_model.id)and(raznoe.id_tip=raznoe_tip.id))'
+      'where'
+      '('
+      '(rashodnik_for.id_name=:ID_NAME)'
+      'and'
+      '(raznoe.id_start_work=:ID_SW)'
+      ')'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID_NAME'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ID_SW'
+        ParamType = ptInput
+      end>
+    left = 240
+    top = 152
+  end
+  object DataSource5: TDataSource
+    DataSet = SQLQuery5
+    left = 269
+    top = 152
+  end
+end

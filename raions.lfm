@@ -1,0 +1,418 @@
+object FormRaion: TFormRaion
+  Left = 385
+  Height = 457
+  Top = 180
+  Width = 1064
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsDialog
+  Caption = 'данные района'
+  ClientHeight = 457
+  ClientWidth = 1064
+  OnCreate = FormCreate
+  LCLVersion = '1.6.0.4'
+  object Label1: TLabel
+    Left = 18
+    Height = 13
+    Top = 20
+    Width = 46
+    Caption = 'район №'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 18
+    Height = 13
+    Top = 47
+    Width = 105
+    Caption = 'район наименование'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 18
+    Height = 13
+    Top = 74
+    Width = 150
+    Caption = 'район краткое наименование'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 18
+    Height = 13
+    Top = 101
+    Width = 144
+    Caption = 'район полное наименование'
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 18
+    Height = 13
+    Top = 184
+    Width = 88
+    Caption = 'ИНН организации'
+    ParentColor = False
+  end
+  object Label6: TLabel
+    Left = 18
+    Height = 13
+    Top = 211
+    Width = 94
+    Caption = 'ОГРН организации'
+    ParentColor = False
+  end
+  object Label7: TLabel
+    Left = 18
+    Height = 13
+    Top = 238
+    Width = 97
+    Caption = 'адрес организации'
+    ParentColor = False
+  end
+  object MaskEdit1: TMaskEdit
+    Left = 192
+    Height = 21
+    Top = 20
+    Width = 32
+    CharCase = ecNormal
+    MaxLength = 2
+    TabOrder = 0
+    EditMask = '00;0;_'
+    SpaceChar = '_'
+  end
+  object DBEdit1: TDBEdit
+    Left = 192
+    Height = 21
+    Top = 47
+    Width = 832
+    DataField = 'NAME'
+    DataSource = DataSource1
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 1
+  end
+  object DBEdit2: TDBEdit
+    Left = 192
+    Height = 21
+    Top = 74
+    Width = 832
+    DataField = 'FULL_KR_NAME'
+    DataSource = DataSource1
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 2
+  end
+  object DBEdit3: TDBEdit
+    Left = 192
+    Height = 21
+    Top = 101
+    Width = 832
+    DataField = 'FULL_NAME'
+    DataSource = DataSource1
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 3
+  end
+  object DBEdit4: TDBEdit
+    Left = 192
+    Height = 21
+    Top = 184
+    Width = 212
+    DataField = 'INN'
+    DataSource = DataSource1
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 4
+  end
+  object DBEdit5: TDBEdit
+    Left = 192
+    Height = 21
+    Top = 211
+    Width = 212
+    DataField = 'OGRN'
+    DataSource = DataSource1
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 5
+  end
+  object DBMemo1: TDBMemo
+    Left = 192
+    Height = 90
+    Top = 238
+    Width = 832
+    DataField = 'ADDRESS'
+    DataSource = DataSource1
+    TabOrder = 6
+  end
+  object Button1: TButton
+    Left = 265
+    Height = 32
+    Top = 390
+    Width = 146
+    Caption = 'Сохранить'
+    Default = True
+    ModalResult = 1
+    OnClick = Button1Click
+    TabOrder = 7
+  end
+  object Button2: TButton
+    Left = 653
+    Height = 32
+    Top = 390
+    Width = 146
+    Cancel = True
+    Caption = 'Отменить'
+    ModalResult = 2
+    TabOrder = 8
+  end
+  object Label8: TLabel
+    Left = 20
+    Height = 13
+    Top = 136
+    Width = 54
+    Caption = 'начальник'
+    ParentColor = False
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 192
+    Height = 21
+    Top = 136
+    Width = 216
+    DataField = 'ID_BOSS'
+    DataSource = DataSource1
+    KeyField = 'ID'
+    ListField = 'FIO'
+    ListFieldIndex = 0
+    ListSource = DataSource2
+    LookupCache = False
+    TabOrder = 9
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'PREFIKS'
+        DataType = ftString
+        Precision = -1
+        Size = 12
+      end    
+      item
+        Name = 'NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'SMALL_NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 1020
+      end    
+      item
+        Name = 'FULL_NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 1020
+      end    
+      item
+        Name = 'ID_BOSS'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ID_MAINBUH'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ADDRESS'
+        DataType = ftString
+        Precision = -1
+        Size = 1020
+      end    
+      item
+        Name = 'FULL_KR_NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 400
+      end    
+      item
+        Name = 'INN'
+        DataType = ftString
+        Precision = -1
+        Size = 40
+      end    
+      item
+        Name = 'OGRN'
+        DataType = ftString
+        Precision = -1
+        Size = 52
+      end>
+    SQL.Strings = (
+      'select * from RAIONS'
+      'where ID=:ID_RAION'
+    )
+    Options = []
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID_RAION'
+        ParamType = ptInput
+      end>
+    left = 8
+    top = 192
+    object SQLQuery1ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery1PREFIKS: TStringField
+      DisplayWidth = 12
+      FieldKind = fkData
+      FieldName = 'PREFIKS'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 12
+    end
+    object SQLQuery1NAME: TStringField
+      DisplayWidth = 60
+      FieldKind = fkData
+      FieldName = 'NAME'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 60
+    end
+    object SQLQuery1SMALL_NAME: TStringField
+      DisplayWidth = 1020
+      FieldKind = fkData
+      FieldName = 'SMALL_NAME'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1020
+    end
+    object SQLQuery1FULL_NAME: TStringField
+      DisplayWidth = 1020
+      FieldKind = fkData
+      FieldName = 'FULL_NAME'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1020
+    end
+    object SQLQuery1ID_BOSS: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID_BOSS'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery1ID_MAINBUH: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID_MAINBUH'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery1ADDRESS: TStringField
+      DisplayWidth = 1020
+      FieldKind = fkData
+      FieldName = 'ADDRESS'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1020
+    end
+    object SQLQuery1FULL_KR_NAME: TStringField
+      DisplayWidth = 400
+      FieldKind = fkData
+      FieldName = 'FULL_KR_NAME'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 400
+    end
+    object SQLQuery1INN: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'INN'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object SQLQuery1OGRN: TStringField
+      DisplayWidth = 52
+      FieldKind = fkData
+      FieldName = 'OGRN'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 52
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    left = 66
+    top = 192
+  end
+  object SQLQuery2: TSQLQuery
+    FieldDefs = <>
+    SQL.Strings = (
+      'select START_WORK.ID as ID, PEOPLES.FAM||'' ''||LEFT(PEOPLES.NAM,1)||''. ''||LEFT(PEOPLES.OTCH,1)||''.'' as FIO from START_WORK join PEOPLES'
+      'on (START_WORK.ID_PEOPLE=PEOPLES.ID)'
+      'where (START_WORK.ID_RAION=:ID_RAION)'
+      'order by FAM, NAM, OTCH'
+    )
+    Options = []
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID_RAION'
+        ParamType = ptInput
+      end>
+    left = 16
+    top = 264
+  end
+  object DataSource2: TDataSource
+    DataSet = SQLQuery2
+    left = 48
+    top = 264
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Options = []
+    left = 37
+    top = 192
+  end
+end

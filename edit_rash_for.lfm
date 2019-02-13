@@ -1,0 +1,430 @@
+object frmRashFor: TfrmRashFor
+  Left = 373
+  Height = 508
+  Top = 117
+  Width = 741
+  Caption = 'Связь расходников и оборудования'
+  ClientHeight = 508
+  ClientWidth = 741
+  LCLVersion = '1.6.0.4'
+  object DBGrid1: TDBGrid
+    Left = 16
+    Height = 115
+    Top = 31
+    Width = 680
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource2
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 26
+    Height = 27
+    Top = 160
+    Width = 123
+    Caption = 'Добавить связь'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object DBLookupComboBox2: TDBLookupComboBox
+    Left = 136
+    Height = 23
+    Top = 304
+    Width = 445
+    AutoComplete = True
+    AutoDropDown = True
+    DataField = 'name'
+    DataSource = DataSource4
+    KeyField = 'name'
+    ListField = 'name'
+    ListFieldIndex = 0
+    ListSource = DataSource4
+    LookupCache = False
+    ScrollListDataset = True
+    Sorted = True
+    Style = csDropDownList
+    TabOrder = 2
+  end
+  object DBLookupComboBox3: TDBLookupComboBox
+    Left = 136
+    Height = 23
+    Top = 248
+    Width = 445
+    AutoComplete = True
+    AutoDropDown = True
+    DataField = 'name'
+    DataSource = DataSource5
+    KeyField = 'name'
+    ListField = 'name'
+    ListFieldIndex = 0
+    ListSource = DataSource5
+    LookupCache = False
+    ScrollListDataset = True
+    Sorted = True
+    Style = csDropDownList
+    TabOrder = 3
+  end
+  object DBLookupComboBox4: TDBLookupComboBox
+    Left = 136
+    Height = 23
+    Top = 360
+    Width = 445
+    AutoComplete = True
+    AutoDropDown = True
+    DataField = 'name'
+    DataSource = DataSource6
+    KeyField = 'name'
+    ListField = 'name'
+    ListFieldIndex = 0
+    ListSource = DataSource6
+    LookupCache = False
+    ScrollListDataset = True
+    Sorted = True
+    Style = csDropDownList
+    TabOrder = 4
+  end
+  object DBText1: TDBText
+    Left = 152
+    Height = 15
+    Top = 216
+    Width = 43
+    DataField = 'FIO'
+    DataSource = DataSource3
+    ParentColor = False
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 30
+    Top = 304
+    Width = 81
+    Caption = 'наименование'#13#10'расходника'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 8
+    Height = 30
+    Top = 248
+    Width = 63
+    Caption = 'тип'#13#10'расходника'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 8
+    Height = 30
+    Top = 360
+    Width = 38
+    Caption = 'тип'#13#10'разное'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 8
+    Height = 30
+    Top = 416
+    Width = 41
+    Caption = 'модель'#13#10'разное'
+    ParentColor = False
+  end
+  object DBLookupComboBox5: TDBLookupComboBox
+    Left = 136
+    Height = 23
+    Top = 416
+    Width = 445
+    AutoComplete = True
+    AutoDropDown = True
+    DataField = 'name'
+    DataSource = DataSource7
+    KeyField = 'name'
+    ListField = 'name'
+    ListFieldIndex = 0
+    ListSource = DataSource7
+    LookupCache = False
+    ScrollListDataset = True
+    Style = csDropDownList
+    TabOrder = 5
+  end
+  object Button2: TButton
+    Left = 29
+    Height = 28
+    Top = 1
+    Width = 139
+    Caption = 'Выбрать'
+    Default = True
+    ModalResult = 1
+    OnClick = Button2Click
+    TabOrder = 6
+  end
+  object SQLQuery2: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'NAME_R'
+        DataType = ftString
+        Precision = -1
+        Size = 1020
+      end    
+      item
+        Name = 'TIP_R'
+        DataType = ftString
+        Precision = -1
+        Size = 1020
+      end    
+      item
+        Name = 'MODEL_RAZN'
+        DataType = ftString
+        Precision = -1
+        Size = 1020
+      end>
+    Database = mainF.connector2
+    Transaction = mainF.translocation2
+    SQL.Strings = (
+      '/*select rashodnik_for.id, rashodnik_name.name, raznoe_tip.name, raznoe_model.name from rashodnik_for  join raznoe_tip'
+      'on (rashodnik_for.id_raznoe_tip=raznoe_tip.id) join raznoe_model'
+      'on (rashodnik_for.id_raznoe_model=raznoe_model.id) join rashodnik_name'
+      'on (rashodnik_name.id=rashodnik_for.id_name)  */'
+      ''
+      'select rashodnik_for.id, rashodnik_name.name as NAME_R, raznoe_tip.name as TIP_R,'
+      'raznoe_model.name as MODEL_RAZN from rashodnik_for  join raznoe_tip'
+      'on (rashodnik_for.id_raznoe_tip=raznoe_tip.id) join raznoe_model'
+      'on (rashodnik_for.id_raznoe_model=raznoe_model.id) join rashodnik_name'
+      'on (rashodnik_name.id=rashodnik_for.id_name) join raznoe'
+      'on ((raznoe.id_model=raznoe_model.id)and(raznoe.id_tip=raznoe_tip.id))'
+      'where (raznoe.id_start_work=:id_sw)'
+      ''
+    )
+    Options = []
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'id_sw'
+        ParamType = ptInput
+      end>
+    left = 312
+    top = 192
+    object SQLQuery2ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      ReadOnly = False
+      Required = True
+      Visible = False
+    end
+    object SQLQuery2TIP_R: TStringField
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'TIP_R'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 1020
+    end
+    object SQLQuery2NAME_R: TStringField
+      DisplayWidth = 20
+      FieldKind = fkData
+      FieldName = 'NAME_R'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 1020
+    end
+    object SQLQuery2MODEL_RAZN: TStringField
+      DisplayWidth = 30
+      FieldKind = fkData
+      FieldName = 'MODEL_RAZN'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 1020
+    end
+  end
+  object DataSource2: TDataSource
+    DataSet = SQLQuery2
+    left = 341
+    top = 192
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Options = []
+    Params = <>
+    left = 168
+    top = 160
+  end
+  object SQLQuery3: TSQLQuery
+    FieldDefs = <>
+    SQL.Strings = (
+      'select START_WORK.ID as ID, START_WORK.TABNOM as TABNOM,'
+      ' PEOPLES.FAM||'' ''||LEFT(PEOPLES.NAM,1)||''. ''||LEFT(PEOPLES.OTCH,1)||'
+      ' ''. (таб.№''||START_WORK.TABNOM||'') ''||POSTS.NAME  as FIO,'
+      '  GROUPS.NAME as GNAME,'
+      ' POSTS.NAME as PNAME from START_WORK join PEOPLES'
+      'on (START_WORK.ID_PEOPLE=PEOPLES.ID) left join GROUPS'
+      'on (START_WORK.ID_GROUP=GROUPS.ID) join POSTS'
+      'on (POSTS.ID=START_WORK.ID_POST)'
+      'where ('
+      'not exists('
+      'select TMP_STOP_SW.ID  from TMP_STOP_SW'
+      'where (TMP_STOP_SW.ID_START_WORK=START_WORK.ID)'
+      'union all'
+      'select DISCHARGE.ID  from DISCHARGE'
+      'where (DISCHARGE.ID_START_WORK=START_WORK.ID)'
+      ')'
+      ')'
+      'order by FIO'
+    )
+    Options = []
+    Params = <>
+    left = 656
+    top = 192
+  end
+  object SQLQuery4: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ID_TIP'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 1020
+      end>
+    Database = mainF.connector2
+    Transaction = mainF.translocation2
+    ReadOnly = True
+    SQL.Strings = (
+      'select * from rashodnik_name'
+      'order by name'
+    )
+    Options = []
+    Params = <>
+    left = 648
+    top = 304
+  end
+  object SQLQuery5: TSQLQuery
+    FieldDefs = <>
+    SQL.Strings = (
+      'select * from rashodnik_tip'
+      'where rashodnik_tip.id=:id_tip'
+      'order by name'
+    )
+    Options = []
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'id_tip'
+        ParamType = ptInput
+      end>
+    left = 632
+    top = 248
+  end
+  object SQLQuery6: TSQLQuery
+    FieldDefs = <>
+    AfterScroll = SQLQuery6AfterScroll
+    SQL.Strings = (
+      'select raznoe_tip.id as id, raznoe_tip.name,'
+      'PEOPLES.FAM||'' ''||LEFT(PEOPLES.NAM,1)||''. ''||LEFT(PEOPLES.OTCH,1)||''.'' as FIO,'
+      'raznoe.id_start_work as ID_SW'
+      'from raznoe join raznoe_tip'
+      'on (raznoe.id_tip=raznoe_tip.id) join START_WORK'
+      'on (START_WORK.id=raznoe.id_start_work) join PEOPLES'
+      'on (START_WORK.id_people=peoples.id)'
+      'where (raznoe.id_start_work=:ID_SW)'
+      'order by raznoe_tip.name'
+    )
+    Options = []
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID_SW'
+        ParamType = ptInput
+      end>
+    left = 640
+    top = 360
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    left = 248
+    top = 160
+  end
+  object DataSource3: TDataSource
+    DataSet = SQLQuery3
+    left = 688
+    top = 192
+  end
+  object DataSource4: TDataSource
+    DataSet = SQLQuery4
+    left = 680
+    top = 304
+  end
+  object DataSource5: TDataSource
+    DataSet = SQLQuery5
+    left = 672
+    top = 248
+  end
+  object DataSource6: TDataSource
+    DataSet = SQLQuery6
+    left = 672
+    top = 360
+  end
+  object SQLQuery7: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 1020
+      end>
+    Database = mainF.connector2
+    Transaction = mainF.translocation2
+    SQL.Strings = (
+      'select raznoe_model.id as id,'
+      'raznoe_model.name as name'
+      ' from raznoe_model join raznoe'
+      'on (raznoe_model.id=raznoe.id_model)'
+      'where (raznoe.id_start_work=:ID_SW)'
+      'and(raznoe.id_tip=:ID_TIP)'
+      'order by name'
+    )
+    Options = []
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'ID_SW'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ID_TIP'
+        ParamType = ptInput
+      end>
+    left = 640
+    top = 416
+  end
+  object DataSource7: TDataSource
+    DataSet = SQLQuery7
+    left = 672
+    top = 416
+  end
+end
